@@ -185,13 +185,13 @@ return false;
 if (isset($_SESSION['username'])) {
 ?>
 <div class="style2" id="inhoud" style="">
-<form enctype="multipart/form-data" action="../cgi-bin/redirect.pl" method="POST" onSubmit="return dropdown(this.categorie)">
+<form enctype="multipart/form-data" action="uploader.php" method="POST">
 <input type="hidden" name="MAX_FILE_SIZE" value="100000000" />
 Kies een foto om up te loaden: <input name="uploadedfile" type="file" /><br />
-<select id="categorie">
+<select id="categorie" name="categorie">
 <option selected>Categorie:</option>
-<option value="uploadertuinen.php">Tuinen</option>
-<option value="uploaderbadkamer.php">Badkamer</option>
+<option value="tuinen">Tuinen</option>
+<option value="badkamer">Badkamer</option>
 </select>
 <input type="submit" value="Upload File" />
 </form>

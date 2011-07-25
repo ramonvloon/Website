@@ -169,7 +169,12 @@ TheImgWin.focus();
 </div>
 <div class="style2" id="inhoud" style="">
 <?
-$target_path = "fotos/";
+if ($_POST['categorie'] == "tuinen"){
+$target_path = "fotos/tuinen/";
+}
+if ($_POST['categorie'] == "badkamer"){
+$target_path = "fotos/badkamers/";
+}
 
 $target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
 
