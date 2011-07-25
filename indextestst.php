@@ -8,8 +8,8 @@
 <!--
 #index_opgave {
 	position:absolute;
-	width:185px;
-	height:245px;
+	width:201px;
+	height:241px;
 	z-index:1;
 	left: 13px;
 	top: 195px;
@@ -30,6 +30,7 @@
 	left: 231px;
 	top: 175px;
 	visibility: inherit;
+	background-image: url(fotos/achtergrond1.jpg);
 }
 #Layer3 {
 	position:absolute;
@@ -59,6 +60,22 @@
 	z-index:5;
 	left: 13px;
 	top: 457px;
+}
+#Layer4 {
+	position:absolute;
+	width:152px;
+	height:96px;
+	z-index:6;
+	left: 17px;
+	top: 506px;
+}
+#Layer5 {
+	position:absolute;
+	width:104px;
+	height:161px;
+	z-index:7;
+	left: 778px;
+	top: 5px;
 }
 -->
 </style>
@@ -113,21 +130,8 @@ function MM_nbGroup(event, grpName) { //v6.0
 }
 //-->
 </script>
-</script>
-
-<script type="text/javascript">
-function goImgWin(myImage,myWidth,myHeight,origLeft,origTop) {
-myHeight += 24;
-myWidth += 24;
-TheImgWin = window.open(myImage,'image','height=' +
-myHeight + ',width=' + myWidth +
-',toolbar=no,directories=no,status=no,' +
-'menubar=no,scrollbars=no,resizable=no');
-TheImgWin.moveTo(origLeft,origTop);
-TheImgWin.focus();
-}
-</script>
 </head>
+
 <body onload="MM_preloadImages('Buttons/home_over.png','Buttons/nieuwbouw_over.png','Buttons/aanbouw_over.png','Buttons/restauratie_over.png','Buttons/tuin_over.png','Buttons/interieur_over.png','Buttons/contact_over.png', 'Buttons/logout_over.png')">
 <div id="index_opgave">
   <table border="0" cellpadding="0" cellspacing="0">
@@ -161,44 +165,29 @@ TheImgWin.focus();
       <td><a href="logout.php" target="_top" onclick="MM_nbGroup('down','group1','Logout','',1)" onmouseover="MM_nbGroup('over','Logout','Buttons/logout_over.png','',1)" onmouseout="MM_nbGroup('out')"><img src="Buttons/logout_up.png" alt="" name="Logout" border="0" id="Logout" onload="" /></a></td>
     </tr> 
 	<? } ?>
-  </table>
+	</table>
   <br />
 </div>
 <div id="Layer1">
   <div align="left"><a href="index.php"><img src="Logo/refab_1.jpg" alt="logo" width="322" height="136" border="0" /></a></div>
 </div>
 <div class="style2" id="inhoud" style="">
-<?
-if ($_POST['categorie'] == "tuinen"){
-$target_path = "fotos/tuinen/";
-}
-if ($_POST['categorie'] == "badkamer"){
-$target_path = "fotos/badkamers/";
-}
-if ($_POST['categorie'] == "aanbouw"){
-$target_path = "fotos/aanbouw/";
-}
-if ($_POST['categorie'] == "deuren"){
-$target_path = "fotos/deuren/";
-}
-if ($_POST['categorie'] == "garages"){
-$target_path = "fotos/garages/";
-}
-if ($_POST['categorie'] == "slaapkamers"){
-$target_path = "fotos/slaapkamers/";
-}
-
-$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
-
-if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
-    echo "Het bestand ".  basename( $_FILES['uploadedfile']['name']). 
-    " is upgeload";
-} else{
-    echo "Er is iets misgegaan, probeer het opnieuw!";
-}
-?>
+  <p align="justify"><br />
+    <strong>Welkom op de site van Aannemingsbedrijf                  ReFab.</strong></p>
+  <p align="justify">Heeft u plannen voor een                  verbouwing, renovatie of nieuwbouw? Heeft u leuke idee&euml;n voor                 binnen of buiten? Of grootse plannen met uw woning? Bent u op zoek                 naar d&eacute; bouwkundige oplossing?</p>
+  <p align="left">Dan bent u bij Aannemingsbedrijf ReFab aan het juiste adres. Want wij zorgen dat                 de renovatie, bouw of verbouw tot in de puntjes wordt uitgevoerd.<br />
+  Van het begin tot het eind.</p>
+  <p align="left">Aannemingsbedrijf ReFab heeft een professioneel team                  dat voor u klaarstaat.                  als het gaat om renovatie,
+  nieuwbouw en verbouw van woningen,                  bedrijfsgebouwen en villa's.</p>
+  <p align="justify"><strong><em>Aannemingsbedrijf ReFab: vakmanschap waar u op kunt bouwen!</em></strong></p>
+  <p align="justify"><strong>Wat                 doen wij voor u</strong></p>
+  <p align="left">Aannemingsbedrijf ReFab is een veelzijdig bedrijf. U kunt ons  team                 inschakelen vanaf het prille begin. Wij begeleiden en adviseren                 bij het uitwerken van de idee&euml;n en bouwplannen tot de complete                 afbouw. Precies zoals u dat wilt.</p>
+  <p align="justify"><strong>Garanties</strong></p>
+  <p>Aannemingsbedrijf ReFab geeft op   elk bouwkundig werk standaard de daarvoor geldende garantie.  Er   wordt voortdurend gelet op veiligheid en kwaliteit. En dat merkt u aan het   uitstekende resultaat, de superieure kwaliteit en klantgerichte service. </p>
+  <p align="left"><strong>Indien u in samenwerking met uw buren hetzelfde project wilt laten uitvoeren met ons, kunnen wij u een zeer aantrekkelijke korting bieden! </strong></p>
+  <p align="justify">&nbsp;</p>
 </div>
-<p>&nbsp;</p>		
+<p>&nbsp;</p>
 <div id="Layer3">
   <p class="style1">Oostzaan<br />
   Tel/Fax: 075-6844341<br />

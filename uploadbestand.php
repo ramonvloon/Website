@@ -192,6 +192,10 @@ Kies een foto om up te loaden: <input name="uploadedfile" type="file" /><br />
 <option selected>Categorie:</option>
 <option value="tuinen">Tuinen</option>
 <option value="badkamer">Badkamer</option>
+<option value="aanbouw">Aanbouw</option>
+<option value="deuren">Deuren</option>
+<option value="garages">Garages</option>
+<option value="slaapkamers">Slaapkamers</option>
 </select>
 <input type="submit" value="Upload File" />
 </form>

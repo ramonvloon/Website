@@ -175,7 +175,7 @@ TheImgWin.focus();
   <p align="left">
 
   <a href="fotos/aanbouw_tumb.jpg" target="_blank"
-onclick="goImgWin('fotos/aanbouw.jpg',640,480,100,50);return false;"><img
+onclick="goImgWin('fotos/aanbouw/aanbouw.jpg',640,480,100,50);return false;"><img
 src="fotos/aanbouw_tumb.jpg"  border="1"
 alt="Aanbouw" align="left" /></a>
 
@@ -193,18 +193,18 @@ alt="Aanbouw" align="left" /></a>
   <p><strong>Garage's</strong></p>
   <p>Een garage biedt tegenwoordig veel                 meer mogelijkheden dan alleen de opslag van auto's en greedschap. Hier                 kunt u uw droombadkamer met sauna realiseren of misschien wilt u                 hier een knusse hobbyruimte of studio cre&euml;ren. <br />
   Vraag Aannemingsbedrijf                 ReFaB naar de mogelijkheden.</p>
-  <p><a href="fotos/garage.jpg" target="_blank"
-onclick="goImgWin('fotos/garage.jpg',640,480,100,50);return false;"><img
+  <p><a href="fotos/garages/garage.jpg" target="_blank"
+onclick="goImgWin('fotos/garages/garage.jpg',640,480,100,50);return false;"><img
 src="fotos/garage_tumb.jpg"  border="1"
 alt="Verbouw garage" align="left" /></a>
     
-    <a href="fotos/slaapkamer.jpg" target="_blank"
-onclick="goImgWin('fotos/slaapkamer.jpg',640,480,100,50);return false;"><img
+    <a href="fotos/slaapkamers/slaapkamer.jpg" target="_blank"
+onclick="goImgWin('fotos/slaapkamers/slaapkamer.jpg',640,480,100,50);return false;"><img
 src="fotos/slaapkamer_tumb.jpg"  border="1"
 alt="slaapkamer in garage" align="left" /></a>
     
     <a href="fotos/wandkast_tumb.jpg" target="_blank"
-onclick="goImgWin('fotos/wandkast.jpg',640,480,100,50);return false;"><img
+onclick="goImgWin('fotos/deuren/wandkast.jpg',640,480,100,50);return false;"><img
 src="fotos/wandkast_tumb.jpg"  border="1"
 alt="Wandkast in garage" align="left" /></a> &nbsp;
     </p>
