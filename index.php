@@ -152,21 +152,32 @@
             $(function() {
                 resizeImage();
                 imageCounter = Math.floor(Math.random() * (images.length + 1));
-                startLoop();
                 $('.MenuItem').click(function(event) {
                     window.location = $(this).children().get(0);
                     event.preventDefault();
+                });
+                $('#Next').click(function(){
+                    nextImage();
+                });
+                $('#Previous').click(function(){
+                    previousImage();
+                });
+                $('#Pause').click(function(){
+                    pause();
+                });
+                $('#Play').click(function(){
+                    startLoop();
                 });
             });
             function startLoop() {
                 if(myInterval > 0) {
                     clearInterval(myInterval);
                 }
-                myInterval = setInterval("switchImage()", 5000);
+                myInterval = setTimeout("switchImage()", 5000);
                 $('pause').css('display', 'none');
                 $('speel').css('display', 'inline');
                 $('terug').attr('src', 'buttons/terugna.jpg');
-                $('volgende').attr('buttons/volgendena.jpg'); 
+                $('volgende').attr('buttons/volgendena.jpg');
                 timer = true;
             }
             function switchImage() {
@@ -177,7 +188,9 @@
                 }
                 $('#ImageViewer').attr('src', images[imageCounter]);
                 resizeImage();
-                startLoop();
+                if (timer) {
+                    startLoop();
+                }
             }
             function resizeImage() {
                 if ($('#ImageViewer').width() > 200) {
@@ -193,16 +206,17 @@
                 $('volgende').attr('buttons/volgende.jpg'); 
                 timer = false;
             }
-            function terug() {
+            function nextImage() {
                 if (timer == false) {
-                    ImageCounter -= 1;
+                    switchImage();
                 }
             }
-            function volgende() {
+            function previousImage() {
                 if (timer == false) {
-                    ImageCounter += 1;
+                    imageCounter -= 2;
+                    switchImage();
                 }
-            }		
+            }
         </script>
     </head>
     <body>
@@ -308,10 +322,10 @@
             <p align="justify">&nbsp;</p>
             <div id="imageviewer">
                 <img id="ImageViewer" src="Logo/refab_1.jpg" alt="ImageViewer" />
-                <img src="Buttons/terug.jpg" id="terug" alt="terug" onclick="terug();" />
-                <img src="Buttons/speel.jpg" id="speel" alt="speel" onclick="startLoop();" />
-                <img src="Buttons/pause.jpg" id="pause" alt="pause" onclick="pause();" />
-                <img src="Buttons/volgende.jpg" id="volgende" alt="volgende" onclick="volgende();" />
+                <img src="Buttons/terug.jpg" id="Previous" alt="terug" />
+                <img src="Buttons/speel.jpg" id="Play" alt="speel" />
+                <img src="Buttons/pause.jpg" id="Pause" alt="pause" />
+                <img src="Buttons/volgende.jpg" id="Next" alt="volgende" />
             </div>
         </div>
         <p>&nbsp;</p>
