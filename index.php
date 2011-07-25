@@ -272,7 +272,7 @@
             <p align="left"><strong>Indien u in samenwerking met uw buren hetzelfde project wilt laten uitvoeren met ons, kunnen wij u een zeer aantrekkelijke korting bieden! </strong></p>
             <p align="justify">&nbsp;</p>
             <div id="imageviewer">
-                <img id="ImageViewer" src="logo/refab_1.jpg" alt="ImageViewer" />
+                <img id="ImageViewer" src="Logo/refab_1.jpg" alt="ImageViewer" />
             </div>
         </div>
         <p>&nbsp;</p>
