@@ -1,4 +1,4 @@
-<? session_start(); ?>
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -91,6 +91,34 @@
                 left: 778px;
                 top: 5px;
             }
+            .MenuItem {
+                width:200px;
+                text-align: center;
+                font-weight: bold;
+                background: #4162b8;
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4162b8', endColorstr='#6f89cc');
+                background: -webkit-gradient(linear, left top, left bottom, from(#4162b8), to(#6f89cc));
+                background: -moz-linear-gradient(top,  #4162b8,  #6f89cc);
+                border: 1px solid #4162b8;
+                cursor: pointer;
+            }
+            .MenuItem:hover {
+                background: #8aaaff;
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8aaaff', endColorstr='#ccdaff');
+                background: -webkit-gradient(linear, left top, left bottom, from(#8aaaff), to(#ccdaff));
+                background: -moz-linear-gradient(top,  #8aaaff,  #ccdaff);
+                border: 1px solid #d9e3ff;
+            }
+            .MenuItemText {
+                color:white;
+                text-decoration: none;
+            }
+            .MenuItem:hover .MenuItemText {
+                color:black;
+            }
+            .MenuItemText:hover {
+                color:black;
+            }
             -->
         </style>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -124,12 +152,16 @@
                 resizeImage();
                 imageCounter = Math.floor(Math.random() * (images.length + 1));
                 startLoop();
+                $('.MenuItem').click(function(event) {
+                    window.location = $(this).children().get(0);
+                    event.preventDefault();
+                });
             });
             function startLoop() {
                 if(myInterval > 0) {
                     clearInterval(myInterval);
                 }
-                myInterval = setInterval( "switchImage()", 5000 );
+                myInterval = setInterval("switchImage()", 5000);
             }
             function switchImage() {
                 if (imageCounter + 1 > images.length) {
@@ -154,67 +186,74 @@
         <div id="index_opgave">
             <table border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td>
-                        <a href="index.php" target="_top">
-                            <img src="Buttons/home_up.png" alt="" name="Home" width="190" height="20" border="0" id="Home" />
+                    <td class="MenuItem">
+                        <a href="index.php" target="_top" class="MenuItemText">
+                            Home
                         </a>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="nieuwbouw.php" target="_top">
-                            <img name="Nieuwbouw" src="Buttons/nieuwbouw_up.png" border="0" alt="" />
+                    <td class="MenuItem">
+                        <a href="nieuwbouw.php" target="_top" class="MenuItemText">
+                            Nieuwbouw
                         </a>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="aanbouw.php" target="_top">
-                            <img name="Aanbouw" src="Buttons/aanbouw_up.png" border="0" alt="" />
+                    <td class="MenuItem">
+                        <a href="aanbouw.php" target="_top" class="MenuItemText">
+                            Aanbouw
                         </a>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="restauratie.php" target="_top">
-                            <img name="Restauratie" src="Buttons/restauratie_up.png" border="0" alt="" />
+                    <td class="MenuItem">
+                        <a href="restauratie.php" target="_top" class="MenuItemText">
+                            Restauratie
                         </a>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="tuin.php" target="_top">
-                            <img name="Tuin" src="Buttons/tuin_up.png" border="0" alt="" />
+                    <td class="MenuItem">
+                        <a href="tuin.php" target="_top" class="MenuItemText">
+                            Tuin
                         </a>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="interieur.php" target="_top">
-                            <img name="Interieur" src="Buttons/interieur_up.png" border="0" alt=""/>
+                    <td class="MenuItem">
+                        <a href="fotoscat.php" target="_top" class="MenuItemText">
+                            Foto's
                         </a>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="contact.php" target="_top">
-                            <img name="Contact" src="Buttons/contact_up.png" border="0" alt="" />
+                    <td class="MenuItem">
+                        <a href="interieur.php" target="_top" class="MenuItemText">
+                            Interieur
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="MenuItem">
+                        <a href="contact.php" target="_top" class="MenuItemText">
+                            Contact
                         </a>
                     </td>
                 </tr>
                 <?php if (!isset($_SESSION['username'])) { ?>
                     <tr>
-                        <td>
-                            <a href="login.php" target="_top">
-                                <img src="Buttons/login_up.png" alt="" name="Login" border="0" id="Login" />
+                        <td class="MenuItem">
+                            <a href="login.php" target="_top" class="MenuItemText">
+                                Login
                             </a>
                         </td>
                     </tr> 
                 <?php } else { ?>
                     <tr>
-                        <td>
-                            <a href="logout.php" target="_top">
-                                <img src="Buttons/logout_up.png" alt="" name="Logout" border="0" id="Logout" />
+                        <td class="MenuItem">
+                            <a href="logout.php" target="_top" class="MenuItemText">
+                                Logout
                             </a>
                         </td>
                     </tr> 
@@ -278,7 +317,7 @@
                         src="http://m1.webstats4u.com/n?id=AD0BzQ/sdn4m5uJmb7Jygr4d1Afw"
                         border="0" width="18" height="18"
                         alt="Webstats4U - Gratis web site statistieken
-                        Eigen homepage website teller"></a><br>
+                        Eigen homepage website teller" /></a><br />
                     <a target="_blank" href="http://www.webstats4u.com/">Gratis teller</a>
             </noscript>
             <!-- End Webstats4U code --></div>
