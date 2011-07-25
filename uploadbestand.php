@@ -185,18 +185,22 @@ return false;
 if (isset($_SESSION['username'])) {
 ?>
 <div class="style2" id="inhoud" style="">
-<form enctype="multipart/form-data" action="../cgi-bin/redirect.pl" method="POST" onSubmit="return dropdown(this.categorie)">
+<form enctype="multipart/form-data" action="uploader.php" method="POST">
 <input type="hidden" name="MAX_FILE_SIZE" value="100000000" />
 Kies een foto om up te loaden: <input name="uploadedfile" type="file" /><br />
-<select id="categorie">
+<select id="categorie" name="categorie">
 <option selected>Categorie:</option>
-<option value="uploadertuinen.php">Tuinen</option>
-<option value="uploaderbadkamer.php">Badkamer</option>
+<option value="tuinen">Tuinen</option>
+<option value="badkamer">Badkamer</option>
+<option value="aanbouw">Aanbouw</option>
+<option value="deuren">Deuren</option>
+<option value="garages">Garages</option>
+<option value="slaapkamers">Slaapkamers</option>
 </select>
 <input type="submit" value="Upload File" />
 </form>
 <br>
-<a href = "showpictures.php">Klik hier om de foto's die er al op staan te zien</a>
+<a href = "fotoscat.php">Klik hier om de foto's die er al op staan te zien</a>
 </div>
 <? }else{
 echo "Je bent niet ingelogd"; } ?>

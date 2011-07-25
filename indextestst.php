@@ -8,8 +8,8 @@
 <!--
 #index_opgave {
 	position:absolute;
-	width:185px;
-	height:245px;
+	width:201px;
+	height:241px;
 	z-index:1;
 	left: 13px;
 	top: 195px;
@@ -30,6 +30,7 @@
 	left: 231px;
 	top: 175px;
 	visibility: inherit;
+	background-image: url(fotos/achtergrond1.jpg);
 }
 #Layer3 {
 	position:absolute;
@@ -59,6 +60,22 @@
 	z-index:5;
 	left: 13px;
 	top: 457px;
+}
+#Layer4 {
+	position:absolute;
+	width:152px;
+	height:96px;
+	z-index:6;
+	left: 17px;
+	top: 506px;
+}
+#Layer5 {
+	position:absolute;
+	width:104px;
+	height:161px;
+	z-index:7;
+	left: 778px;
+	top: 5px;
 }
 -->
 </style>
@@ -113,20 +130,6 @@ function MM_nbGroup(event, grpName) { //v6.0
 }
 //-->
 </script>
-</script>
-
-<script type="text/javascript">
-function goImgWin(myImage,myWidth,myHeight,origLeft,origTop) {
-myHeight += 24;
-myWidth += 24;
-TheImgWin = window.open(myImage,'image','height=' +
-myHeight + ',width=' + myWidth +
-',toolbar=no,directories=no,status=no,' +
-'menubar=no,scrollbars=no,resizable=no');
-TheImgWin.moveTo(origLeft,origTop);
-TheImgWin.focus();
-}
-</script>
 </head>
 
 <body onload="MM_preloadImages('Buttons/home_over.png','Buttons/nieuwbouw_over.png','Buttons/aanbouw_over.png','Buttons/restauratie_over.png','Buttons/tuin_over.png','Buttons/interieur_over.png','Buttons/contact_over.png', 'Buttons/logout_over.png')">
@@ -162,81 +165,27 @@ TheImgWin.focus();
       <td><a href="logout.php" target="_top" onclick="MM_nbGroup('down','group1','Logout','',1)" onmouseover="MM_nbGroup('over','Logout','Buttons/logout_over.png','',1)" onmouseout="MM_nbGroup('out')"><img src="Buttons/logout_up.png" alt="" name="Logout" border="0" id="Logout" onload="" /></a></td>
     </tr> 
 	<? } ?>
-  </table>
+	</table>
   <br />
 </div>
 <div id="Layer1">
   <div align="left"><a href="index.php"><img src="Logo/refab_1.jpg" alt="logo" width="322" height="136" border="0" /></a></div>
 </div>
 <div class="style2" id="inhoud" style="">
-<?
-echo "Tuinen:<br>";
-$directory = 'fotos/tuinen';
-if ($handle = opendir($directory)) {
-    while (($file = readdir($handle)) !== false) {
-		if ($file != '.' && $file != '..') {
-			echo '<img style="height:200px; width:250px;" src="' . $directory . '/' . $file . '" alt="' . $file . '">';
-		}
-	}
-    closedir($handle);
-}
-
-echo "<br>Badkamers:<br>";
-$directory1 = 'fotos/badkamers';
-if ($handle1 = opendir($directory1)) {
-    while (($file1 = readdir($handle1)) !== false) {
-		if ($file1 != '.' && $file1 != '..') {
-			echo '<img style="height:200px; width:250px;" src="' . $directory1 . '/' . $file1 . '" alt="' . $file1 . '">';
-		}
-   }
-    closedir($handle1);
-}
-
-echo "<br>Aanbouw:<br>";
-$directory2 = 'fotos/aanbouw';
-if ($handle2 = opendir($directory2)) {
-    while (($file2 = readdir($handle2)) !== false) {
-		if ($file2 != '.' && $file2 != '..') {
-			echo '<img style="height:200px; width:250px;" src="' . $directory2 . '/' . $file2 . '" alt="' . $file2 . '">';
-		}
-	}
-    closedir($handle2);
-}
-
-echo "<br>Garages:<br>";
-$directory3 = 'fotos/garages';
-if ($handle3 = opendir($directory3)) {
-    while (($file3 = readdir($handle3)) !== false) {
-		if ($file3 != '.' && $file3 != '..') {
-			echo '<img style="height:200px; width:250px;" src="' . $directory3 . '/' . $file3 . '" alt="' . $file3 . '">';
-		}
-	}	
-    closedir($handle3);
-}
-
-echo "<br>Deuren:<br>";
-$directory4 = 'fotos/deuren';
-if ($handle4 = opendir($directory4)) {
-    while (($file4 = readdir($handle4)) !== false) {
-		if ($file4 != '.' && $file4 != '..') {
-			echo '<img style="height:200px; width:250px;" src="' . $directory4 . '/' . $file4 . '" alt="' . $file4 . '">';
-		}
-	}
-    closedir($handle4);
-}
-
-echo "<br>Slaapkamers:<br>";
-$directory5 = 'fotos/slaapkamers';
-if ($handle5 = opendir($directory5)) {
-    while (($file5 = readdir($handle5)) !== false) {
-		if ($file5 != '.' && $file5 != '..') {
-			echo '<img style="height:200px; width:250px;" src="' . $directory5 . '/' . $file5 . '" alt="' . $file5 . '">';
-		}
-	}
-    closedir($handle5);
-}
-?>
-</style>
+  <p align="justify"><br />
+    <strong>Welkom op de site van Aannemingsbedrijf                  ReFab.</strong></p>
+  <p align="justify">Heeft u plannen voor een                  verbouwing, renovatie of nieuwbouw? Heeft u leuke idee&euml;n voor                 binnen of buiten? Of grootse plannen met uw woning? Bent u op zoek                 naar d&eacute; bouwkundige oplossing?</p>
+  <p align="left">Dan bent u bij Aannemingsbedrijf ReFab aan het juiste adres. Want wij zorgen dat                 de renovatie, bouw of verbouw tot in de puntjes wordt uitgevoerd.<br />
+  Van het begin tot het eind.</p>
+  <p align="left">Aannemingsbedrijf ReFab heeft een professioneel team                  dat voor u klaarstaat.                  als het gaat om renovatie,
+  nieuwbouw en verbouw van woningen,                  bedrijfsgebouwen en villa's.</p>
+  <p align="justify"><strong><em>Aannemingsbedrijf ReFab: vakmanschap waar u op kunt bouwen!</em></strong></p>
+  <p align="justify"><strong>Wat                 doen wij voor u</strong></p>
+  <p align="left">Aannemingsbedrijf ReFab is een veelzijdig bedrijf. U kunt ons  team                 inschakelen vanaf het prille begin. Wij begeleiden en adviseren                 bij het uitwerken van de idee&euml;n en bouwplannen tot de complete                 afbouw. Precies zoals u dat wilt.</p>
+  <p align="justify"><strong>Garanties</strong></p>
+  <p>Aannemingsbedrijf ReFab geeft op   elk bouwkundig werk standaard de daarvoor geldende garantie.  Er   wordt voortdurend gelet op veiligheid en kwaliteit. En dat merkt u aan het   uitstekende resultaat, de superieure kwaliteit en klantgerichte service. </p>
+  <p align="left"><strong>Indien u in samenwerking met uw buren hetzelfde project wilt laten uitvoeren met ons, kunnen wij u een zeer aantrekkelijke korting bieden! </strong></p>
+  <p align="justify">&nbsp;</p>
 </div>
 <p>&nbsp;</p>
 <div id="Layer3">
@@ -251,5 +200,26 @@ if ($handle5 = opendir($directory5)) {
 <p>&nbsp;</p>
 <hr />
 <p>&nbsp;</p>
+<div id="Layer4"> <!-- Begin Webstats4U code -->
+<!-- Title: ReFab.nl -->
+<!-- URL: http://www.refab.nl/ -->
+<script language="JavaScript" type="text/javascript"
+src="http://m1.webstats4u.com/m.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+  webstats4u("AD0BzQ/sdn4m5uJmb7Jygr4d1Afw", 0);
+// -->
+</script>
+<noscript>
+<a target="_blank"
+href="http://www.webstats4u.com/stats?AD0BzQ/sdn4m5uJmb7Jygr4d1Afw"><img
+src="http://m1.webstats4u.com/n?id=AD0BzQ/sdn4m5uJmb7Jygr4d1Afw"
+border="0" width="18" height="18"
+alt="Webstats4U - Gratis web site statistieken
+Eigen homepage website teller"></a><br>
+<a target="_blank" href="http://www.webstats4u.com/">Gratis teller</a>
+</noscript>
+<!-- End Webstats4U code --></div>
 </body>
 </html>

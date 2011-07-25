@@ -148,6 +148,7 @@
             );
             var myInterval = 0;
             var imageCounter = 0;
+            var timer = false;
             $(function() {
                 resizeImage();
                 imageCounter = Math.floor(Math.random() * (images.length + 1));
@@ -162,6 +163,11 @@
                     clearInterval(myInterval);
                 }
                 myInterval = setInterval("switchImage()", 5000);
+                $('pause').css('display', 'none');
+                $('speel').css('display', 'inline');
+                $('terug').attr('src', 'buttons/terugna.jpg');
+                $('volgende').attr('buttons/volgendena.jpg'); 
+                timer = true;
             }
             function switchImage() {
                 if (imageCounter + 1 > images.length) {
@@ -180,6 +186,23 @@
                     $('#ImageViewer').css('height', '100%');
                 }
             }
+            function pause() {
+                $('pause').css('display', 'none');
+                $('speel').css('display', 'inline');
+                $('terug').attr('src', 'buttons/terug.jpg');
+                $('volgende').attr('buttons/volgende.jpg'); 
+                timer = false;
+            }
+            function terug() {
+                if (timer == false) {
+                    ImageCounter -= 1;
+                }
+            }
+            function volgende() {
+                if (timer == false) {
+                    ImageCounter += 1;
+                }
+            }		
         </script>
     </head>
     <body>
@@ -285,6 +308,10 @@
             <p align="justify">&nbsp;</p>
             <div id="imageviewer">
                 <img id="ImageViewer" src="Logo/refab_1.jpg" alt="ImageViewer" />
+                <img src="Buttons/terug.jpg" id="terug" alt="terug" onclick="terug();" />
+                <img src="Buttons/speel.jpg" id="speel" alt="speel" onclick="startLoop();" />
+                <img src="Buttons/pause.jpg" id="pause" alt="pause" onclick="pause();" />
+                <img src="Buttons/volgende.jpg" id="volgende" alt="volgende" onclick="volgende();" />
             </div>
         </div>
         <p>&nbsp;</p>
