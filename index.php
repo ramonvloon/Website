@@ -1,4 +1,4 @@
-<? session_start(); ?>
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
         <style type="text/css">
@@ -88,6 +88,34 @@
                 left: 778px;
                 top: 5px;
             }
+            .MenuItem {
+                width:200px;
+                text-align: center;
+                font-weight: bold;
+                background: #4162b8;
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4162b8', endColorstr='#6f89cc');
+                background: -webkit-gradient(linear, left top, left bottom, from(#4162b8), to(#6f89cc));
+                background: -moz-linear-gradient(top,  #4162b8,  #6f89cc);
+                border: 1px solid #4162b8;
+                cursor: pointer;
+            }
+            .MenuItem:hover {
+                background: #8aaaff;
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8aaaff', endColorstr='#ccdaff');
+                background: -webkit-gradient(linear, left top, left bottom, from(#8aaaff), to(#ccdaff));
+                background: -moz-linear-gradient(top,  #8aaaff,  #ccdaff);
+                border: 1px solid #d9e3ff;
+            }
+            .MenuItemText {
+                color:white;
+                text-decoration: none;
+            }
+            .MenuItem:hover .MenuItemText {
+                color:black;
+            }
+            .MenuItemText:hover {
+                color:black;
+            }
             -->
         </style>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -117,24 +145,37 @@
             );
             var myInterval = 0;
             var imageCounter = 0;
-			var timer = false;
-            
-			$(function() {
+            var timer = false;
+            $(function() {
                 resizeImage();
                 imageCounter = Math.floor(Math.random() * (images.length + 1));
-                startLoop();
+                $('.MenuItem').click(function(event) {
+                    window.location = $(this).children().get(0);
+                    event.preventDefault();
+                });
+                $('#Next').click(function(){
+                    nextImage();
+                });
+                $('#Previous').click(function(){
+                    previousImage();
+                });
+                $('#Pause').click(function(){
+                    pause();
+                });
+                $('#Play').click(function(){
+                    startLoop();
+                });
             });
             function startLoop() {
                 if(myInterval > 0) {
                     clearInterval(myInterval);
                 }
-                myInterval = setInterval( "switchImage()", 5000 );
-				
-				$('pause').css('display', 'none');
-				$('speel').css('display', 'inline');
-				$('terug').attr('src', 'buttons/terugna.jpg');
-				$('volgende').attr('buttons/volgendena.jpg'); 
-				timer = true;
+                myInterval = setTimeout("switchImage()", 5000);
+                $('pause').css('display', 'none');
+                $('speel').css('display', 'inline');
+                $('terug').attr('src', 'buttons/terugna.jpg');
+                $('volgende').attr('buttons/volgendena.jpg');
+                timer = true;
             }
             
             function switchImage() {
@@ -145,44 +186,129 @@
                 }
                 $('#ImageViewer').attr('src', images[imageCounter]);
                 resizeImage();
-				startLoop();
+
+                if (timer) {
+                    startLoop();
+                }
             }
-			
             function resizeImage() {
                 if ($('#ImageViewer').width() > 200) {
                     $('#ImageViewer').css('width', '100%');
                 } else {
                     $('#ImageViewer').css('height', '100%');
                 }
-			}
 				
-			function pause() {
-				$('pause').css('display', 'none');
-				$('speel').css('display', 'inline');
-				$('terug').attr('src', 'buttons/terug.jpg');
-				$('volgende').attr('buttons/volgende.jpg'); 
-				timer = false;
-			}
-			
-			function terug(){
-				if(timer == false)
-				{
-					ImageCounter -= 1;
-				}
-			}
-
-			function volgende(){
-				if(timer == false){
-					ImageCounter += 1;
-				}
-			}
-				
-        </script>
+            }
+            function pause() {
+                $('pause').css('display', 'none');
+                $('speel').css('display', 'inline');
+                $('terug').attr('src', 'buttons/terug.jpg');
+                $('volgende').attr('buttons/volgende.jpg'); 
+                timer = false;
+            }
+            function nextImage() {
+                if (timer == false) {
+                    switchImage();
+                }
+            }
+            function previousImage() {
+                if (timer == false) {
+                    imageCounter -= 2;
+                    switchImage();
+                }
+            }
+         </script>
     </head>
     <body>
     <?
     include('layers.php');
-    ?>
+    ?>           
+        <div id="index_opgave">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="MenuItem">
+                        <a href="index.php" target="_top" class="MenuItemText">
+                            Home
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="MenuItem">
+                        <a href="nieuwbouw.php" target="_top" class="MenuItemText">
+                            Nieuwbouw
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="MenuItem">
+                        <a href="aanbouw.php" target="_top" class="MenuItemText">
+                            Aanbouw
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="MenuItem">
+                        <a href="restauratie.php" target="_top" class="MenuItemText">
+                            Restauratie
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="MenuItem">
+                        <a href="tuin.php" target="_top" class="MenuItemText">
+                            Tuin
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="MenuItem">
+                        <a href="fotoscat.php" target="_top" class="MenuItemText">
+                            Foto's
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="MenuItem">
+                        <a href="interieur.php" target="_top" class="MenuItemText">
+                            Interieur
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="MenuItem">
+                        <a href="contact.php" target="_top" class="MenuItemText">
+                            Contact
+                        </a>
+                    </td>
+                </tr>
+                <?php if (!isset($_SESSION['username'])) { ?>
+                    <tr>
+                        <td class="MenuItem">
+                            <a href="login.php" target="_top" class="MenuItemText">
+                                Login
+                            </a>
+                        </td>
+                    </tr> 
+                <?php } else { ?>
+                    <tr>
+                        <td class="MenuItem">
+                            <a href="logout.php" target="_top" class="MenuItemText">
+                                Logout
+                            </a>
+                        </td>
+                    </tr> 
+                <?php } ?>
+            </table>
+            <br />
+        </div>
+        <div id="Layer1">
+            <div align="left">
+                <a href="index.php">
+                    <img src="Logo/refab_1.jpg" alt="logo" width="322" height="136" border="0" />
+                </a>
+            </div>
+        </div>
+
         <div class="style2" id="inhoud" style="">
             <p align="justify"><br />
                 <strong>Welkom op de site van Aannemingsbedrijf                  ReFab.</strong></p>
@@ -200,11 +326,17 @@
             <p align="justify">&nbsp;</p>
             <div id="imageviewer">
                 <img id="ImageViewer" src="Logo/refab_1.jpg" alt="ImageViewer" />
-				<img src="Buttons/terug.jpg" id="terug" alt="terug" onclick="terug()" />
-				<img src="Buttons/speel.jpg" id="speel" alt="speel" onclick="startLoop()" />
-				<img src="Buttons/pause.jpg" id="pause" alt="pause" onclick="pause()" />
-				<img src="Buttons/volgende.jpg" id="volgende" alt="volgende" onclick="volgende()" /> 
+                <img src="Buttons/terug.jpg" id="Previous" alt="terug" />
+                <img src="Buttons/speel.jpg" id="Play" alt="speel" />
+                <img src="Buttons/pause.jpg" id="Pause" alt="pause" />
+                <img src="Buttons/volgende.jpg" id="Next" alt="volgende" />
             </div>
         </div>
+        
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <hr />
+        <p>&nbsp;</p>
     </body>
 </html>
