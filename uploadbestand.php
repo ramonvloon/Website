@@ -200,7 +200,7 @@ Kies een foto om up te loaden: <input name="uploadedfile" type="file" /><br />
 <input type="submit" value="Upload File" />
 </form>
 <br>
-<a href = "showpictures.php">Klik hier om de foto's die er al op staan te zien</a>
+<a href = "fotoscat.php">Klik hier om de foto's die er al op staan te zien</a>
 </div>
 <? }else{
 echo "Je bent niet ingelogd"; } ?>
