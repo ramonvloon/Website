@@ -29,6 +29,11 @@ echo '
     <html>
         <head>
             <title>Verwijderscript</title>
+            <style type="text/css">
+                img:hover {
+                    cursor: pointer;
+                }
+            </style>
         </head>
         <body>
             <form method="GET" action="' . $_SERVER['PHP_SELF'] . '">
@@ -64,12 +69,12 @@ foreach($files as $file) {
     if (isset($_GET['category'])) {
         if (strstr($file, $_GET['category']) != false) {
             echo '
-                <img src="' . $file . '" alt="' . $file . '" style="width:200px;" onClick="submit(\'' . $file . '\');"/>
+                <img src="' . $file . '" alt="' . $file . '" style="width:200px;" title="Verwijderen" onClick="submit(\'' . $file . '\');"/>
             ';
         }
     } else {
         echo '
-            <img src="' . $file . '" alt="' . $file . '" style="width:200px;" onClick="submit(\'' . $file . '\');"/>
+            <img src="' . $file . '" alt="' . $file . '" style="width:200px;" title="Verwijderen" onClick="submit(\'' . $file . '\');"/>
         ';
     }
 }
