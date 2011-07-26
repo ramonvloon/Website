@@ -2,9 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-            #Play {
-                display: none;
-            }
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script type="text/javascript">
             var images = Array(
@@ -61,8 +58,8 @@
                 myInterval = setTimeout("switchImage()", 5000);
                 $('#Pause').css('display', 'inline');
                 $('#Play').css('display', 'none');
-                $('#Previous').attr('src', 'buttons/terugna.jpg');
-                $('#Next').attr('src', 'buttons/volgendena.jpg');
+                $('#Previous').attr('src', 'Buttons/terug.jpg');
+                $('#Next').attr('src', 'Buttons/volgende.jpg'); 
                 timer = true;
             }
             function switchImage() {
@@ -78,7 +75,7 @@
                 }
             }
             function resizeImage() {
-                if ($('#ImageViewer').width() > 200) {
+                if ($('#ImageViewer').width() > 250) {
                     $('#ImageViewer').css('width', '100%');
                 } else {
                     $('#ImageViewer').css('height', '100%');
@@ -87,8 +84,8 @@
             function pause() {
                 $('#Pause').css('display', 'none');
                 $('#Play').css('display', 'inline');
-                $('#Previous').attr('src', 'buttons/terug.jpg');
-                $('#Next').attr('src', 'buttons/volgende.jpg'); 
+                $('#Previous').attr('src', 'Buttons/terug.jpg');
+                $('#Next').attr('src', 'Buttons/volgende.jpg'); 
                 timer = false;
             }
             function nextImage() {
@@ -126,7 +123,7 @@
             <div id="imageviewer">
                 <img id="ImageViewer" src="Logo/refab_1.jpg" alt="ImageViewer" />
             </div>
-            <div id="controlpanel">
+            <div id="controlpanel" align="center">
                 <img src="Buttons/terug.jpg" id="Previous" alt="Previous" />
                 <img src="Buttons/speel.jpg" id="Play" alt="Play" />            
                 <img src="Buttons/pause.jpg" id="Pause" alt="Pause" />

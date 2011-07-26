@@ -33,17 +33,20 @@
                 position:relative;
                 float:right;
                 margin-right:-400px;
-                margin-top:-600px;
-                width:200px;
-                height:200px;
+                margin-top:-650px;
+                width:250px;
+                height:250px;
                 z-index:3;
+                border: 2px solid blue;
             }
             #controlpanel {
                 position:relative;
                 float:right;
-                margin-right:-350px;
-                margin-top:-400px;
-                z-index:3;                
+                margin-right:-400px;
+                margin-top:-390px;
+                width:250px;
+                z-index:3;
+                border: 2px solid blue;
             }
             #Layer3 {
                 position:absolute;
@@ -171,7 +174,7 @@
                 </tr>
                 <tr>
                     <td class="MenuItem">
-                        <a href="fotoscat.php" target="_top" class="MenuItemText">
+                        <a href="categorie.php" target="_top" class="MenuItemText">
                             Foto's
                         </a>
                     </td>

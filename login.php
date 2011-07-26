@@ -104,6 +104,8 @@ TheImgWin.focus();
     <body>
     <?
     include('layers.php');
+    
+if (!isset($_SESSION['username'])) {
     ?>
 <div class="style2" id="inhoud" style="">
                     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" onSubmit=return document.getElementById('login').disabled;>
@@ -131,7 +133,7 @@ TheImgWin.focus();
                         </td>
                     </form>
 			<? }else{ ?>
-			U bent al ingelogd
+			<center> U bent al ingelogd
 			<? } ?>
 		</div>
 </body>
