@@ -1,13 +1,8 @@
-<?
+<?php
 $file = $_POST['naamfoto'];
-unlink($file)
-
-if (unlink($file) == TRUE)
-	{
-	echo "bestand is verwijderd";
-	}
-	else
-	{
-	echo "bestand verwijderen is mislukt";
-	}
+if (unlink($file) == true) {
+    echo "Bestand is verwijderd";
+} else {
+    echo "Bestand verwijderen is mislukt";
+}
 ?>
