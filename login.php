@@ -128,6 +128,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                             </tr>
                         </table>
                     </form>
+</body>
                 </div>
             ';
         } else {
