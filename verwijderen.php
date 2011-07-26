@@ -4,7 +4,7 @@ if(isset($_GET['delete']) && $_GET['delete']=='true') {
 }
 ?>
 <?php 
-                $files = "";
+$files = "";
 if ($handle = opendir('fotos/')) {  
     while (false !== ($file = readdir($handle))) 
 	{

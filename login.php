@@ -133,7 +133,7 @@ if (!isset($_SESSION['username'])) {
                         </td>
                     </form>
 			<? }else{ ?>
-			<center> U bent al ingelogd
+			<center> U bent al ingelogd </center>
 			<? } ?>
 		</div>
 </body>
