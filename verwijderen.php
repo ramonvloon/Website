@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['fileToDelete'])) {
-    unlink("fotos/" . $_POST['fileToDelete']);
+    unlink($_POST['fileToDelete']);
 }
 $files = "";
 $categories = "";
