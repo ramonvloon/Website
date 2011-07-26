@@ -2,6 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
+            #Play {
+                display: none;
+            }
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script type="text/javascript">
             var images = Array(
@@ -29,10 +32,9 @@
             );
             var myInterval = 0;
             var imageCounter = 0;
-            var timer = false;
+            var timer = true;
             $(function() {
                 resizeImage();
-                startLoop();
                 imageCounter = Math.floor(Math.random() * (images.length + 1));
                 $('.MenuItem').click(function(event) {
                     window.location = $(this).children().get(0);
@@ -50,19 +52,19 @@
                 $('#Play').click(function(){
                     startLoop();
                 });
+                startLoop();
             });
             function startLoop() {
                 if(myInterval > 0) {
                     clearInterval(myInterval);
                 }
                 myInterval = setTimeout("switchImage()", 5000);
-                document.getElementById("Play").style.display = 'none';
-                document.getElementById("Pause").style.display = 'inline';
-                document.getElementById("Previous").style.display = 'none';
-                document.getElementById("Next").style.display = 'none';
+                $('#Pause').css('display', 'inline');
+                $('#Play').css('display', 'none');
+                $('#Previous').attr('src', 'buttons/terugna.jpg');
+                $('#Next').attr('src', 'buttons/volgendena.jpg');
                 timer = true;
             }
-            
             function switchImage() {
                 if (imageCounter + 1 > images.length) {
                     imageCounter = 1;
@@ -71,7 +73,6 @@
                 }
                 $('#ImageViewer').attr('src', images[imageCounter]);
                 resizeImage();
-
                 if (timer) {
                     startLoop();
                 }
@@ -82,13 +83,12 @@
                 } else {
                     $('#ImageViewer').css('height', '100%');
                 }
-				
             }
             function pause() {
-                document.getElementById("Pause").style.display = 'none';
-                document.getElementById("Play").style.display = 'inline';
-                document.getElementById("Previous").src = 'Buttons/terug.jpg';
-                document.getElementById("Next").src = 'Buttons/volgende.jpg';
+                $('#Pause').css('display', 'none');
+                $('#Play').css('display', 'inline');
+                $('#Previous').attr('src', 'buttons/terug.jpg');
+                $('#Next').attr('src', 'buttons/volgende.jpg'); 
                 timer = false;
             }
             function nextImage() {
