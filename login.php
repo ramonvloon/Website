@@ -35,65 +35,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Refab.nl</title>
-<style type="text/css">
-<!--
-#index_opgave {
-	position:absolute;
-	width:185px;
-	height:245px;
-	z-index:1;
-	left: 13px;
-	top: 195px;
-}
-#Layer1 {
-	position:absolute;
-	width:340px;
-	height:156px;
-	z-index:2;
-	left: 231px;
-	top: 5px;
-}
-#inhoud {
-	position:absolute;
-	width:531px;
-	height:455px;
-	z-index:3;
-	left: 231px;
-	top: 175px;
-	visibility: inherit;
-}
-#Layer3 {
-	position:absolute;
-	width:155px;
-	height:84px;
-	z-index:4;
-	left: 583px;
-	top: 55px;
-}
-.style1 {
-	color: #0040a1;
-	font-weight: bold;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-}
-.style2 {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #0040a1;
-}
-.style3 {	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	color: #0040a1;
-}
-#Layer2 {	position:absolute;
-	width:194px;
-	height:23px;
-	z-index:5;
-	left: 13px;
-	top: 457px;
-}
--->
-</style>
 <script type="text/JavaScript">
 <!--
 function MM_preloadImages() { //v3.0
@@ -193,18 +134,5 @@ TheImgWin.focus();
 			U bent al ingelogd
 			<? } ?>
 		</div>
-<p>&nbsp;</p>		
-<div id="Layer3">
-  <p class="style1">Oostzaan<br />
-  Tel/Fax: 075-6844341<br />
-  06-54 61 66 58<br />
-  06-30 53 19 26<br />
-  <a href="mailto:info@refab.nl">info@refab.nl</a></p>
-</div>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr />
-<p>&nbsp;</p>
 </body>
 </html>

@@ -164,17 +164,5 @@ alt="Openslaande Deuren" align="left" /></a>
   <p align="justify">&nbsp;</p>
 </div>
 <p>&nbsp;</p>
-<div id="Layer3">
-  <p class="style1">Oostzaan<br />
-  Tel/Fax: 075-6844341<br />
-  06-54 61 66 58<br />
-  06-30 53 19 26<br />
-  <a href="mailto:info@refab.nl">info@refab.nl</a></p>
-</div>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr />
-<p>&nbsp;</p>
 </body>
 </html>

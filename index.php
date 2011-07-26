@@ -1,123 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-        <style type="text/css">
-            <!--
-            #index_opgave {
-                position:absolute;
-                width:201px;
-                height:241px;
-                z-index:1;
-                left: 13px;
-                top: 195px;
-            }
-            #Layer1 {
-                position:absolute;
-                width:340px;
-                height:156px;
-                z-index:2;
-                left: 231px;
-                top: 5px;
-            }
-            #inhoud {
-                position:absolute;
-                width:531px;
-                height:455px;
-                z-index:3;
-                left: 231px;
-                top: 175px;
-                visibility: inherit;
-                background-image: url(fotos/achtergrond1.jpg);
-            }
-            #imageviewer {
-                position:relative;
-                float:right;
-                margin-right:-400px;
-                margin-top:-600px;
-                width:200px;
-                height:200px;
-                z-index:3;
-            }
-            #Layer3 {
-                position:absolute;
-                width:155px;
-                height:84px;
-                z-index:4;
-                left: 583px;
-                top: 55px;
-            }
-            #ImageViewer {
-                vertical-align: middle;
-            }
-            .style1 {
-                color: #0040a1;
-                font-weight: bold;
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 14px;
-            }
-            .style2 {
-                font-family: Arial, Helvetica, sans-serif;
-                color: #0040a1;
-            }
-            .style3 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 10px;
-                color: #0040a1;
-            }
-            #Layer2 {
-                position:absolute;
-                width:194px;
-                height:23px;
-                z-index:5;
-                left: 13px;
-                top: 457px;
-            }
-            #Layer4 {
-                position:absolute;
-                width:152px;
-                height:96px;
-                z-index:6;
-                left: 17px;
-                top: 506px;
-            }
-            #Layer5 {
-                position:absolute;
-                width:104px;
-                height:161px;
-                z-index:7;
-                left: 778px;
-                top: 5px;
-            }
-            .MenuItem {
-                width:200px;
-                text-align: center;
-                font-weight: bold;
-                background: #4162b8;
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4162b8', endColorstr='#6f89cc');
-                background: -webkit-gradient(linear, left top, left bottom, from(#4162b8), to(#6f89cc));
-                background: -moz-linear-gradient(top,  #4162b8,  #6f89cc);
-                border: 1px solid #4162b8;
-                cursor: pointer;
-            }
-            .MenuItem:hover {
-                background: #8aaaff;
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8aaaff', endColorstr='#ccdaff');
-                background: -webkit-gradient(linear, left top, left bottom, from(#8aaaff), to(#ccdaff));
-                background: -moz-linear-gradient(top,  #8aaaff,  #ccdaff);
-                border: 1px solid #d9e3ff;
-            }
-            .MenuItemText {
-                color:white;
-                text-decoration: none;
-            }
-            .MenuItem:hover .MenuItemText {
-                color:black;
-            }
-            .MenuItemText:hover {
-                color:black;
-            }
-            -->
-        </style>
+
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script type="text/javascript">
             var images = Array(
@@ -148,6 +32,7 @@
             var timer = false;
             $(function() {
                 resizeImage();
+                startLoop();
                 imageCounter = Math.floor(Math.random() * (images.length + 1));
                 $('.MenuItem').click(function(event) {
                     window.location = $(this).children().get(0);
@@ -171,10 +56,10 @@
                     clearInterval(myInterval);
                 }
                 myInterval = setTimeout("switchImage()", 5000);
-                $('pause').css('display', 'none');
-                $('speel').css('display', 'inline');
-                $('terug').attr('src', 'buttons/terugna.jpg');
-                $('volgende').attr('buttons/volgendena.jpg');
+                document.getElementById("Play").style.display = 'none';
+                document.getElementById("Pause").style.display = 'inline';
+                document.getElementById("Previous").style.display = 'none';
+                document.getElementById("Next").style.display = 'none';
                 timer = true;
             }
             
@@ -200,10 +85,10 @@
 				
             }
             function pause() {
-                $('pause').css('display', 'none');
-                $('speel').css('display', 'inline');
-                $('terug').attr('src', 'buttons/terug.jpg');
-                $('volgende').attr('buttons/volgende.jpg'); 
+                document.getElementById("Pause").style.display = 'none';
+                document.getElementById("Play").style.display = 'inline';
+                document.getElementById("Previous").src = 'Buttons/terug.jpg';
+                document.getElementById("Next").src = 'Buttons/volgende.jpg';
                 timer = false;
             }
             function nextImage() {
@@ -223,92 +108,6 @@
     <?
     include('layers.php');
     ?>           
-        <div id="index_opgave">
-            <table border="0" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td class="MenuItem">
-                        <a href="index.php" target="_top" class="MenuItemText">
-                            Home
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="MenuItem">
-                        <a href="nieuwbouw.php" target="_top" class="MenuItemText">
-                            Nieuwbouw
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="MenuItem">
-                        <a href="aanbouw.php" target="_top" class="MenuItemText">
-                            Aanbouw
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="MenuItem">
-                        <a href="restauratie.php" target="_top" class="MenuItemText">
-                            Restauratie
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="MenuItem">
-                        <a href="tuin.php" target="_top" class="MenuItemText">
-                            Tuin
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="MenuItem">
-                        <a href="fotoscat.php" target="_top" class="MenuItemText">
-                            Foto's
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="MenuItem">
-                        <a href="interieur.php" target="_top" class="MenuItemText">
-                            Interieur
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="MenuItem">
-                        <a href="contact.php" target="_top" class="MenuItemText">
-                            Contact
-                        </a>
-                    </td>
-                </tr>
-                <?php if (!isset($_SESSION['username'])) { ?>
-                    <tr>
-                        <td class="MenuItem">
-                            <a href="login.php" target="_top" class="MenuItemText">
-                                Login
-                            </a>
-                        </td>
-                    </tr> 
-                <?php } else { ?>
-                    <tr>
-                        <td class="MenuItem">
-                            <a href="logout.php" target="_top" class="MenuItemText">
-                                Logout
-                            </a>
-                        </td>
-                    </tr> 
-                <?php } ?>
-            </table>
-            <br />
-        </div>
-        <div id="Layer1">
-            <div align="left">
-                <a href="index.php">
-                    <img src="Logo/refab_1.jpg" alt="logo" width="322" height="136" border="0" />
-                </a>
-            </div>
-        </div>
-
         <div class="style2" id="inhoud" style="">
             <p align="justify"><br />
                 <strong>Welkom op de site van Aannemingsbedrijf                  ReFab.</strong></p>
@@ -326,17 +125,13 @@
             <p align="justify">&nbsp;</p>
             <div id="imageviewer">
                 <img id="ImageViewer" src="Logo/refab_1.jpg" alt="ImageViewer" />
-                <img src="Buttons/terug.jpg" id="Previous" alt="terug" />
-                <img src="Buttons/speel.jpg" id="Play" alt="speel" />
-                <img src="Buttons/pause.jpg" id="Pause" alt="pause" />
-                <img src="Buttons/volgende.jpg" id="Next" alt="volgende" />
+            </div>
+            <div id="controlpanel">
+                <img src="Buttons/terug.jpg" id="Previous" alt="Previous" />
+                <img src="Buttons/speel.jpg" id="Play" alt="Play" />            
+                <img src="Buttons/pause.jpg" id="Pause" alt="Pause" />
+                <img src="Buttons/volgende.jpg" id="Next" alt="Next" />
             </div>
         </div>
-        
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <hr />
-        <p>&nbsp;</p>
     </body>
 </html>

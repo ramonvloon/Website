@@ -175,10 +175,5 @@ alt="Wandkast in garage" align="left" /></a> &nbsp;
   </p>
   <p align="justify">&nbsp;</p>
 </div>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr />
-<p>&nbsp;</p>
 </body>
 </html>
